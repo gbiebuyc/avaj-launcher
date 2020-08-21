@@ -36,7 +36,8 @@ public class Simulator {
 			    	System.out.println("Error: bad aircraft type");
 			    	return;
 		    	}
-				x.registerTower(weatherTower);		    	
+		    	weatherTower.register(x);
+		    	x.registerTower(weatherTower);
 		    }
 		} catch (IOException e) {
             e.printStackTrace();
