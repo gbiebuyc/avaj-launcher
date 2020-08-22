@@ -3,7 +3,7 @@ package com.example.avaj_launcher;
 public class Baloon extends Aircraft implements Flyable {
 	private WeatherTower weathertower;
 
-	public Baloon(String name, Coordinates coordinates) {
+	Baloon(String name, Coordinates coordinates) {
 		super(name, coordinates);
 	}
 
