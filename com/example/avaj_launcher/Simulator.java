@@ -4,17 +4,25 @@ import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 public class Simulator {
-	static void p(String l) {System.out.println(l);} // println shortcut
+	public static PrintWriter writer;
 
 	public static void main(String [] args) {
 		WeatherTower weatherTower = new WeatherTower();
 		AircraftFactory aircraftFactory = new AircraftFactory();
-		File file = new File(args[0]);
 		int numSimulations = 0;
 
-		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+		try {
+			writer = new PrintWriter("simulation.txt");
+		} catch (FileNotFoundException fnfe) { 
+            System.out.println(fnfe.getMessage());
+            return;
+        }
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {
 		    String line = reader.readLine();
 		    if (line == null) {
 		    	System.out.println("Error: file is empty");
@@ -42,10 +50,12 @@ public class Simulator {
 		    }
 		} catch (IOException e) {
             e.printStackTrace();
+            return;
         }
 
         for (int i=0; i<numSimulations; i++) {
 			weatherTower.changeWeather();
         }
+        writer.close();
 	}
 }
