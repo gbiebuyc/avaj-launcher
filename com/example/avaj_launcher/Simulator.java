@@ -46,7 +46,6 @@ public class Simulator {
         }
 
 
-		/*
-		*/
+		weatherTower.changeWeather();
 	}
 }
