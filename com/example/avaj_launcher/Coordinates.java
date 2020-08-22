@@ -1,3 +1,5 @@
+package com.example.avaj_launcher;
+
 public class Coordinates {
 	private int longitude;
 	private int latitude;

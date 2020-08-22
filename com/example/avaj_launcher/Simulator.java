@@ -1,3 +1,5 @@
+package com.example.avaj_launcher;
+
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;

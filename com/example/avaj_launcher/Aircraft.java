@@ -1,3 +1,5 @@
+package com.example.avaj_launcher;
+
 public class Aircraft {
 	protected long id;
 	protected String name;

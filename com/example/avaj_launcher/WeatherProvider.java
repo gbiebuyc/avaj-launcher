@@ -1,3 +1,5 @@
+package com.example.avaj_launcher;
+
 public class WeatherProvider {
 	private static WeatherProvider weatherProvider = null;
 	private String[] weather = {"RAIN", "FOG", "SUN", "SNOW"};
