@@ -12,7 +12,7 @@ public class Simulator {
 		WeatherTower weatherTower = new WeatherTower();
 		AircraftFactory aircraftFactory = new AircraftFactory();
 		File file = new File(args[0]);
-		int numSimulations;
+		int numSimulations = 0;
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
 		    String line = reader.readLine();
@@ -22,7 +22,6 @@ public class Simulator {
 		    }
 		    numSimulations = Integer.parseInt(line);
 		    while ((line = reader.readLine()) != null) {
-		    	System.out.println(line);
 		    	String[] splited = line.split(" ");
 		    	if (splited.length != 5) {
 			    	System.out.println("Error: wrong line format");
@@ -45,7 +44,8 @@ public class Simulator {
             e.printStackTrace();
         }
 
-
-		weatherTower.changeWeather();
+        for (int i=0; i<numSimulations; i++) {
+			weatherTower.changeWeather();
+        }
 	}
 }
